@@ -1,0 +1,45 @@
+.conversation {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    color: wheat;
+
+    &__avatar .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(174, 160, 160);
+        margin-right: 5px;
+    }
+
+    &__datails {
+        width: 100%;
+    }
+
+    &__datails-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3px;
+
+        .time {
+            font-size: .6em;
+            color:aliceblue;
+        }
+    }
+    &__datails-bottom p {
+        font-size: .8em;
+        display: flex;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.conversation:hover {
+    background-color:#20393f;
+}

@@ -1,0 +1,32 @@
+.form-input__group {
+    margin-bottom: 18px;
+}
+
+.form-input {
+
+    &__label {
+        font-size: 12px;
+        color: #040C0E;
+        font-weight: 400;
+        text-transform: uppercase;
+        display: block;
+        
+    }
+
+    &__input {
+        width: 280px;
+        height: 40px;
+        border-radius: 5px;
+        margin-top: 5px;
+        border: none;
+        background-color: #525B56;
+        padding: 10px;
+        outline:none;
+        color: #BE9063;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

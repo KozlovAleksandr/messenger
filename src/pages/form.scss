@@ -1,0 +1,33 @@
+.form-box {
+    position: relative;
+    height: 100%;
+}
+
+.form {
+    background-color: #BE9063;
+    border-radius: 15px;
+    padding: 53px 75px 22px;
+    
+    &__title {
+        text-align: center;
+        font-size: 32px;
+        color: #040C0E;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+        
+    }
+
+    &__settings {
+        align-items: center;
+
+        &-blocks {
+            display: flex;
+        }
+
+
+        &-left {
+            margin-right: 43px;
+        }
+    }
+}
