@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 *,
 *::before,
 *::after {
@@ -77,7 +79,7 @@ html {
 }
 body {
   font-family: 'Oswald', sans-serif;
-  background-color: #132226;
+  background-color: $mainDarkThemeColor;
   min-height: 100vh;
 }
 

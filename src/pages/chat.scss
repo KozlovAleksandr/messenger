@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .chat-left {
     position: relative;
     flex: 25%;
@@ -19,10 +21,10 @@
             height: 40px;
             border-radius: 18px;
             border: none;
-            background-color: #525B56;
+            background-color: $lightColor;
             padding: 15px;
             outline:none;
-            color: #BE9063;                
+            color: $secondDarkThemeColor;                
         }
     }
     &__chatlist {

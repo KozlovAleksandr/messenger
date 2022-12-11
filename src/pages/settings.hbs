@@ -3,28 +3,29 @@
 
 <div class="form-box">
     <form action="#" class="form">
-        <h3 class="form__title">settings</h3>
-        <div class="form__settings">
-            <div class="form__settings-avatar">
-                <input type="file" name="avatar" id="avatar-upload" class="avatar-input">
-                <label for="avatar-upload"><img src="../asserts/avatar_upload.png" alt=""></label>
-            </div>
-            <div class="form__settings-blocks">
-                <div class="form__settings-left">
-                    {{> 'input/input' title='name' name='first_name' type='text'}}
-                    {{> 'input/input' title='display name' name='display_name' type='text'}}
-                    {{> 'input/input' title='email' name='email' type='text'}}
-                    {{> 'input/input' title='old password' name='oldPassword' type='password'}}
+        <fieldset>
+            <h1 class="form__title">settings</h1>
+            <div class="form__settings">
+                <div class="form__settings-avatar">
+                    <input type="file" name="avatar" id="avatar-upload" class="avatar-input">
+                    <label for="avatar-upload"><img src="../asserts/avatar_upload.png" alt="avatar-upload"></label>
                 </div>
-                <div class="form__settings-right">
-                    {{> 'input/input' title='last name' name='second_name' type='text'}}
-                    {{> 'input/input' title='login' name='login' type='text'}}
-                    {{> 'input/input' title='phone' name='phone' type='number'}}
-                    {{> 'input/input' title='new password' name='newPassword' type='password'}}
+                <div class="form__settings-blocks">
+                    <div class="form__settings-left">
+                        {{> 'input/input' title='name' name='first_name' type='text'}}
+                        {{> 'input/input' title='display name' name='display_name' type='text'}}
+                        {{> 'input/input' title='email' name='email' type='text'}}
+                        {{> 'input/input' title='old password' name='oldPassword' type='password'}}
+                    </div>
+                    <div class="form__settings-right">
+                        {{> 'input/input' title='last name' name='second_name' type='text'}}
+                        {{> 'input/input' title='login' name='login' type='text'}}
+                        {{> 'input/input' title='phone' name='phone' type='number'}}
+                        {{> 'input/input' title='new password' name='newPassword' type='password'}}
+                    </div>
                 </div>
             </div>
-
-        </div>
-        {{> 'button/button' title='save' link='#' link_name=''}}
+            {{> 'button/button' title='save' link='#' link_name=''}}
+        </fieldset>
     </form>
 </div>
