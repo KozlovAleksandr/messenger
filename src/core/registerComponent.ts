@@ -1,10 +1,12 @@
-import Block from './Block';
-import Handlebars, { HelperOptions } from 'handlebars';
+import Block from "./Block";
+import Handlebars, { HelperOptions } from "handlebars";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface BlockConstructable<Props = any> {
   new(props: Props): Block;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint, @typescript-eslint/no-explicit-any
 export default function registerComponent<Props extends any>(Component: BlockConstructable<Props>) {
   Handlebars.registerHelper(Component.name, function (this: Props, { hash: { ref, ...hash }, data, fn }: HelperOptions) {
     if (!data.root.children) {
@@ -21,9 +23,10 @@ export default function registerComponent<Props extends any>(Component: BlockCon
      * Костыль для того, чтобы передавать переменные
      * внутрь блоков вручную подменяя значение
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (Object.keys(hash) as any).forEach((key: keyof Props) => {
-      if (this[key] && typeof this[key] === 'string') {
-        hash[key] = hash[key].replace(new RegExp(`{{${key}}}`, 'i'), this[key]);
+      if (this[key] && typeof this[key] === "string") {
+        hash[key] = hash[key].replace(new RegExp(`{{${key}}}`, "i"), this[key]);
       }
     });
 
@@ -35,8 +38,8 @@ export default function registerComponent<Props extends any>(Component: BlockCon
       refs[ref] = component.getContent();
     }
 
-    const contents = fn ? fn(this): '';
+    const contents = fn ? fn(this): "";
 
     return `<div data-id="${component.id}">${contents}</div>`;
-  })
+  });
 }

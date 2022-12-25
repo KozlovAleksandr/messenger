@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import './variables.scss';
 
 *,
 *::before,
@@ -26,13 +26,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 ul[class],
@@ -81,6 +74,9 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: $mainDarkThemeColor;
   min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
 .container {
@@ -97,16 +93,3 @@ body {
   // align-items: center;
   min-height: calc(100vh - 160px);
 }
-
-// .wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     height: calc(100vh - 120px);
-//     align-items:center;
-//     vertical-align: middle;
-    
-// }
-
-
-

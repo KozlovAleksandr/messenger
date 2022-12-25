@@ -1,19 +1,21 @@
-import EventBus from './EventBus';
-import {nanoid} from 'nanoid';
-import Handlebars from 'handlebars';
+import EventBus from "./EventBus";
+import {nanoid} from "nanoid";
+import Handlebars from "handlebars";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface BlockMeta<P = any> {
   props: P;
 }
 
 type Events = Values<typeof Block.EVENTS>;
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export default class Block<P extends object = {}> {
   static EVENTS = {
-    INIT: 'init',
-    FLOW_CDM: 'flow:component-did-mount',
-    FLOW_CDU: 'flow:component-did-update',
-    FLOW_RENDER: 'flow:render',
+    INIT: "init",
+    FLOW_CDM: "flow:component-did-mount",
+    FLOW_CDU: "flow:component-did-update",
+    FLOW_RENDER: "flow:render",
   } as const;
 
   public id = nanoid(6);
@@ -25,6 +27,7 @@ export default class Block<P extends object = {}> {
 
   eventBus: () => EventBus<Events>;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected state: any = {};
   protected refs: {[key: string]: HTMLElement} = {};
 
@@ -35,7 +38,7 @@ export default class Block<P extends object = {}> {
       props,
     };
 
-    this.getStateFromProps(props)
+    this.getStateFromProps(props);
 
     this.props = this._makePropsProxy(props || {} as P);
     this.state = this._makePropsProxy(this.state);
@@ -55,9 +58,10 @@ export default class Block<P extends object = {}> {
   }
 
   _createResources() {
-    this._element = this._createDocumentElement('div');
+    this._element = this._createDocumentElement("div");
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   protected getStateFromProps(props: any): void {
     this.state = {};
   }
@@ -71,8 +75,8 @@ export default class Block<P extends object = {}> {
     this.componentDidMount(props);
   }
 
-  componentDidMount(props: P) {
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+  componentDidMount(props: P) {}
 
   _componentDidUpdate(oldProps: P, newProps: P) {
     const response = this.componentDidUpdate(oldProps, newProps);
@@ -82,6 +86,7 @@ export default class Block<P extends object = {}> {
     this._render();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate(oldProps: P, newProps: P) {
     return true;
   }
@@ -94,6 +99,7 @@ export default class Block<P extends object = {}> {
     Object.assign(this.props, nextProps);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setState = (nextState: any) => {
     if (!nextState) {
       return;
@@ -110,8 +116,10 @@ export default class Block<P extends object = {}> {
     const fragment = this._compile();
 
     this._removeEvents();
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const newElement = fragment.firstElementChild!;
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this._element!.replaceWith(newElement);
 
     this._element = newElement as HTMLElement;
@@ -119,8 +127,8 @@ export default class Block<P extends object = {}> {
   }
 
   protected render(): string {
-    return '';
-  };
+    return "";
+  }
 
   getContent(): HTMLElement {
     // Хак, чтобы вызвать CDM только после добавления в DOM
@@ -129,21 +137,24 @@ export default class Block<P extends object = {}> {
         if (this.element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
           this.eventBus().emit(Block.EVENTS.FLOW_CDM);
         }
-      }, 100)
+      }, 100);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.element!;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   _makePropsProxy(props: any): any {
     // Можно и так передать this
     // Такой способ больше не применяется с приходом ES6+
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
 
     return new Proxy(props as unknown as object, {
       get(target: Record<string, unknown>, prop: string) {
         const value = target[prop];
-        return typeof value === 'function' ? value.bind(target) : value;
+        return typeof value === "function" ? value.bind(target) : value;
       },
       set(target: Record<string, unknown>, prop: string, value: unknown) {
         target[prop] = value;
@@ -154,7 +165,7 @@ export default class Block<P extends object = {}> {
         return true;
       },
       deleteProperty() {
-        throw new Error('Нет доступа');
+        throw new Error("Нет доступа");
       },
     }) as unknown as P;
   }
@@ -164,6 +175,7 @@ export default class Block<P extends object = {}> {
   }
 
   _removeEvents() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events || !this._element) {
@@ -172,11 +184,13 @@ export default class Block<P extends object = {}> {
 
 
     Object.entries(events).forEach(([event, listener]) => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this._element!.removeEventListener(event, listener);
     });
   }
 
   _addEvents() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events) {
@@ -184,12 +198,13 @@ export default class Block<P extends object = {}> {
     }
 
     Object.entries(events).forEach(([event, listener]) => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this._element!.addEventListener(event, listener);
     });
   }
 
   _compile(): DocumentFragment {
-    const fragment = document.createElement('template');
+    const fragment = document.createElement("template");
 
     /**
      * Рендерим шаблон
@@ -221,7 +236,7 @@ export default class Block<P extends object = {}> {
       /**
        * Ищем элемент layout-а, куда вставлять детей
        */
-      const layoutContent = content.querySelector('[data-layout="1"]');
+      const layoutContent = content.querySelector("[data-layout=\"1\"]");
 
       if (layoutContent && stubChilds.length) {
         layoutContent.append(...stubChilds);
@@ -236,10 +251,10 @@ export default class Block<P extends object = {}> {
 
 
   show() {
-    this.getContent().style.display = 'block';
+    this.getContent().style.display = "block";
   }
 
   hide() {
-    this.getContent().style.display = 'none';
+    this.getContent().style.display = "none";
   }
 }

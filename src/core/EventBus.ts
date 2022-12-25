@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Listener<T extends unknown[] = any[]> = (...args: T) => void;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default class EventBus<E extends string = string, M extends { [K in E]: unknown[] } = Record<E, any[]>> {
   private listeners: { [key in E]?: Listener<M[E]>[] } = {};
 
@@ -8,6 +10,7 @@ export default class EventBus<E extends string = string, M extends { [K in E]: u
       this.listeners[event] = [];
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.listeners[event]!.push(callback);
   }
 
@@ -16,6 +19,7 @@ export default class EventBus<E extends string = string, M extends { [K in E]: u
       throw new Error(`Нет события: ${event}`);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.listeners[event] = this.listeners[event]!.filter(
       listener => listener !== callback,
     );
@@ -27,6 +31,7 @@ export default class EventBus<E extends string = string, M extends { [K in E]: u
       // throw new Error(`Нет события: ${event}`);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.listeners[event]!.forEach(function (listener) {
       listener(...args);
     });
