@@ -36,6 +36,7 @@
     "@typescript-eslint/parser": "5.47.0",
     "eslint": "8.30.0",
     "parcel": "2.8.0",
+    "stylelint": "14.16.1",
     "stylelint-declaration-block-no-ignored-properties": "2.6.0",
     "stylelint-order": "5.0.0",
     "stylelint-scss": "4.3.0",

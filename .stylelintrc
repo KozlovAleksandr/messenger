@@ -2,4 +2,8 @@
   "rules": {
     "color-no-invalid-hex": true
   }
+  ,
+  "ignoreFiles": [
+    "build/*"
+  ]
 }
