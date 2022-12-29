@@ -12,6 +12,9 @@
 <p style="margin: 20px 0 0; font-size: 18px">🖍️ Ссылка на макет в Figma</p>
 <a style="font-size: 17px" href="https://www.figma.com/file/dxrgJjJwtT4jrylJRxOn1G/chat?node-id=0%3A1&t=rgZMB9TfVY0SI8FZ-0">МАКЕТ</a>
 
+<p>🖥️ Ссылка на сайт в Netlify</p>
+<a href="https://famous-stardust-438380.netlify.app">САЙТ</a>
+
 <h3 align="left">Используемые технологии:</h3>
 <p align="left"> 
     <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
