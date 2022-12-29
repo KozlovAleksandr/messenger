@@ -4,16 +4,15 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html --no-source-maps --no-cache",
-    "build": "parcel build src/pages/index.hbs",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node ./server.js"
+    "start": "npm run dev && node ./server.js"
   },
   "alias": {
     "core": "./src/core",
     "components": "./src/components",
     "helpers": "./src/helpers",
     "pages": "./src/pages"
-
   },
   "engines": {
     "node": "^12.0.0"
@@ -37,6 +36,9 @@
     "@typescript-eslint/parser": "5.47.0",
     "eslint": "8.30.0",
     "parcel": "2.8.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.6.0",
+    "stylelint-order": "5.0.0",
+    "stylelint-scss": "4.3.0",
     "typescript": "4.9.4"
   },
   "dependencies": {
