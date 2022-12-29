@@ -1,0 +1,10 @@
+<div class="form-input__group">
+    <label for="" class="form-input__label">\{{ label }}</label>
+    \{{{Input 
+        type="\{{type}}" 
+        name="\{{name}}"
+        onInput=onInput
+    }}}
+    <div class="input-error">\{{#if error}}\{{error}}\{{/if}}</div>
+    {{!-- \{{{InputError text="\error"}}} --}}
+</div>

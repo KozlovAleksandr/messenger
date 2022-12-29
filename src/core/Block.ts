@@ -29,7 +29,7 @@ export default class Block<P extends object = {}> {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected state: any = {};
-  protected refs: {[key: string]: HTMLElement} = {};
+  protected refs: {[key: string]: Block} = {};
 
   public constructor(props?: P) {
     const eventBus = new EventBus<Events>();
@@ -139,7 +139,6 @@ export default class Block<P extends object = {}> {
         }
       }, 100);
     }
-
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.element!;
   }

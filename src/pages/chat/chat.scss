@@ -1,5 +1,9 @@
 @import '../../styles/variables.scss';
 
+.chat {
+    display: flex;
+}
+
 .chat-left {
     position: relative;
     flex: 25%;

@@ -1,12 +1,25 @@
 <div class="container">
+    \{{{Header}}}
     <div class="form-box">
         <form action="#" class="form">
             <fieldset>
                 <h1 class="form__title">sign in</h1>
-                \{{{Input title="login" name="login" type="text"}}}
-                \{{{Input title="password" name="password" type="password"}}}
-                \{{{Button title="sign in" link="#" link_name="create account"}}}
+                \{{{ControlledInput 
+                    label="login" 
+                    type="text" 
+                    name="login"
+                    ref="loginInputRef"
+                    onInput=onInput}}}
+                {{#if error}}{{error}}{{/if}}
+                \{{{ControlledInput 
+                    label="password" 
+                    type="password" 
+                    name="password"
+                    onInput=onInput}}}
+                {{#if error}}{{error}}{{/if}}
+                \{{{Button title="sign in" link="#" link_name="create account" onClick=onSubmit}}}
             </fieldset>
         </form>
     </div>
+    \{{{Footer}}}
 </div>

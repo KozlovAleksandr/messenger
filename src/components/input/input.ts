@@ -4,15 +4,19 @@ import template from "bundle-text:./template.hbs";
 import "./input.scss";
 
 interface InputProps {
-  title: string;
   type?: "text" | "password" | "email";
   name: string;
-  onChange?: () => void;
+  value?: string;
+  error?: string
+  onInput?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+
 }
 
 export class Input extends Block {
-  constructor({title, type, name, onChange = () => {console.log("1");}}: InputProps) {
-    super({title, type, name, events: {input: onChange}});
+  constructor({onInput, ...props}: InputProps) {
+    super({...props, events: {input: onInput}});
   }
 
   protected render(): string {

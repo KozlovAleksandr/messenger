@@ -1,5 +1,6 @@
 <div class="container">
-    <div class="form-box">
+    \{{{Header}}}
+    <div class="form-box settings">
         <form action="#" class="form">
             <fieldset>
                 <h1 class="form__title">settings</h1>
@@ -8,22 +9,55 @@
                         <input type="file" name="avatar" id="avatar-upload" class="avatar-input">
                         <label for="avatar-upload"><img src="../../asserts/avatar_upload.png" alt="avatar-upload"></label>
                     </div>
+                    {{#if error}}{{error}}{{/if}}
                     <div class="form__settings-blocks">
                         <div class="form__settings-left">
-                            \{{{Input title="name" name="first_name" type="text"}}}
-                            \{{{Input title="display name" name="display_name" type="text"}}}
-                            \{{{Input title="email" name="email" type="text"}}}
-                            \{{{Input title="old password" name="oldPassword" type="password"}}}
+                            \{{{ControlledInput 
+                                label="name" 
+                                type="text" 
+                                name="first_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="display name" 
+                                type="text" 
+                                name="display_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="email" 
+                                type="text" 
+                                name="email"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="old password" 
+                                type="password" 
+                                name="oldPassword"
+                                onInput=onInput}}}
                         </div>
                         <div class="form__settings-right">
-                            \{{{Input title="last name" name="second_name" type="text"}}}
-                            \{{{Input title="login" name="login" type="text"}}}
-                            \{{{Input title="phone" name="phone" type="number"}}}
-                            \{{{Input title="new password" name="newPassword" type="password"}}}
+                            \{{{ControlledInput 
+                                label="last name" 
+                                type="text" 
+                                name="second_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="login" 
+                                type="text" 
+                                name="login"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="phone" 
+                                type="text" 
+                                name="phone"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="new password" 
+                                type="password" 
+                                name="newPassword"
+                                onInput=onInput}}}
                         </div>
                     </div>
                 </div>
-                \{{{Button title="save"}}}
+                \{{{Button title="save" onClick=onButtonClick}}}
             </fieldset>
         </form>
     </div>
