@@ -8,8 +8,6 @@
 <p style="margin: 20px 0 0; font-size: 18px">🚀 Команда для сборки и запуска</p>
 <strong style="font-size: 20px; color: #BE9063">$ npm run dev</strong>
 
-<p style="margin: 20px 0 0; font-size: 18px">🪚 Команда для сборки</p>
-<strong style="font-size: 20px; color: #BE9063">$ npm run build</strong>
 
 <p style="margin: 20px 0 0; font-size: 18px">🖍️ Ссылка на макет в Figma</p>
 <a style="font-size: 17px" href="https://www.figma.com/file/dxrgJjJwtT4jrylJRxOn1G/chat?node-id=0%3A1&t=rgZMB9TfVY0SI8FZ-0">МАКЕТ</a>
