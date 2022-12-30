@@ -1,0 +1,64 @@
+<div class="container">
+    \{{{Header}}}
+    <div class="form-box settings">
+        <form action="#" class="form">
+            <fieldset>
+                <h1 class="form__title">settings</h1>
+                <div class="form__settings">
+                    <div class="form__settings-avatar">
+                        <input type="file" name="avatar" id="avatar-upload" class="avatar-input">
+                        <label for="avatar-upload"><img src="../../asserts/avatar_upload.png" alt="avatar-upload"></label>
+                    </div>
+                    {{#if error}}{{error}}{{/if}}
+                    <div class="form__settings-blocks">
+                        <div class="form__settings-left">
+                            \{{{ControlledInput 
+                                label="name" 
+                                type="text" 
+                                name="first_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="display name" 
+                                type="text" 
+                                name="display_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="email" 
+                                type="text" 
+                                name="email"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="old password" 
+                                type="password" 
+                                name="oldPassword"
+                                onInput=onInput}}}
+                        </div>
+                        <div class="form__settings-right">
+                            \{{{ControlledInput 
+                                label="last name" 
+                                type="text" 
+                                name="second_name"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="login" 
+                                type="text" 
+                                name="login"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="phone" 
+                                type="text" 
+                                name="phone"
+                                onInput=onInput}}}
+                            \{{{ControlledInput 
+                                label="new password" 
+                                type="password" 
+                                name="newPassword"
+                                onInput=onInput}}}
+                        </div>
+                    </div>
+                </div>
+                \{{{Button title="save" onClick=onButtonClick}}}
+            </fieldset>
+        </form>
+    </div>
+</div>

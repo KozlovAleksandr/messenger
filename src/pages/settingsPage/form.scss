@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+
+.form-box.settings {
+    position: relative;
+    height: 100%;
+    width: 690px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+}
+
+.form {
+    background-color: $secondDarkThemeColor;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__title {
+        text-align: center;
+        font-size: 32px;
+        color: $darkColor;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+        
+    }
+
+    &__settings {
+        align-items: center;
+
+        &-blocks {
+            display: flex;
+        }
+
+
+        &-left {
+            margin-right: 43px;
+        }
+    }
+}
