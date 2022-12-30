@@ -1,4 +1,4 @@
-import Block from "../../core/Block";
+import Block from "core/Block";
 import template from "bundle-text:./template.hbs";
 
 import "./inputError.scss";
@@ -14,6 +14,9 @@ export class InputError extends Block {
   
 
   protected render(): string {
-    return template;
+    // return template;
+    return `
+      <div class="input-error">{{#if text}}{{text}}{{/if}}</div>
+    `;
   }
 }

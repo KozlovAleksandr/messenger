@@ -1,6 +1,7 @@
 import Block from "core/Block";
 import template from "bundle-text:./template.hbs";
 import { valodateForm, VatidateRuleType } from "helpers/validateForms";
+import ControlledInput from "components/controlledInput";
 
 import "./form.scss";
 
@@ -12,79 +13,62 @@ export class SignIn extends Block {
       error: "",
       loginValue: "",
       passwordValue: "",
-      onButtonClick: () => this.onButtonClick(),
+      onInput: (e: FocusEvent) => {
+        // const inputEl = e.target as HTMLInputElement;
+        // const errorMessage =  valodateForm([
+        //     { type: VatidateRuleType.Login, value: inputEl.value }
+        //   ]);
 
-      // TODO 
-      // onInput: (e: InputEvent) => {
-      // const inputElem = e.target as HTMLInputElement;
-      // const errorMessage =  valodateForm([
-      //   { type: VatidateRuleType.Login, value: inputElem.value }
-      // ]);
-      //   this.refs.loginInputRef.refs.errorRef.setProps({text: errorMessage});
-      // }
+        this.refs.loginInputRef.refs.errorRef.setProps({ text: "" });
+        this.refs.passwordInputRef.refs.errorRef.setProps({ text: "" });
+
+      },
+      // onBlur: () => console.log("onBlur"),
+      onFocus: () => console.log("onFocus"),
     });
   }
-
-
-  onButtonClick () : void {
-    const loginEl = this._element?.querySelector("input[name='login']") as HTMLInputElement;
-    const passwordEl = this._element?.querySelector("input[name='password']") as HTMLInputElement;
-
-    const errorMessage =  valodateForm([
-      { type: VatidateRuleType.Login, value: loginEl.value },
-      { type: VatidateRuleType.Password, value: passwordEl.value },
-    ]);
-
-    if(errorMessage) {
-      this.setProps({
-        error: errorMessage,
-        loginValue: loginEl.value,
-        passwordValue: passwordEl.value
-      });
-    } else {
-      this.setProps({
-        error: "",
-        loginValue: loginEl.value,
-        passwordValue: passwordEl.value
-      });
-    }
-
-    const signInData : {login: string, password: string} = {
-      login: loginEl.value,
-      password: passwordEl.value
-    };
-    console.log(signInData);
-  }
-
 
   render(): string {
     // return template;
     return `
-    <div class="container">
-      {{{Header}}}
-      <div class="form-box">
-        <form action="#" class="form">
-          <fieldset>
-            <h1 class="form__title">sign in</h1>
-            {{#if error}}{{error}}{{/if}}
-            {{{ControlledInput 
-              label="login" 
-              type="text" 
-              name="login"
-              ref="loginInputRef"
-              onInput=onInput
-            }}}
-            {{{ControlledInput 
-              label="password" 
-              type="password" 
-              name="password"
-              onInput=onInput}}}
-            {{{Button title="sign in" link="#" link_name="create account" onClick=onButtonClick}}}
-          </fieldset>
-        </form>
+      <div class="container">
+        {{{Header}}}
+        <div class="form-box">
+          <form action="#" class="form">
+            <fieldset>
+              <h1 class="form__title">sign in</h1>
+              {{{ControlledInput
+                ref="loginInputRef"
+                onInput=onInput
+                onFocus=onFocus
+                label="login"
+                type="text"
+                name="login"
+              }}}
+              {{#if error}}{{error}}{{/if}}
+              {{{ControlledInput
+                ref="passwordInputRef"
+                onInput=onInput
+                onFocus=onFocus
+                label="password"
+                type="password"
+                name="password"
+              }}}
+              {{#if error}}{{error}}{{/if}}
+              {{{Button title="sign in" link="#" link_name="create account"}}}
+            </fieldset>
+          </form>
+        </div>
       </div>
- <!--     {{{Footer}}} -->
-    </div>
     `;
   }
 }
+
+
+
+
+
+
+
+
+

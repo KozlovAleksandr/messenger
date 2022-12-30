@@ -7,19 +7,20 @@ interface InputProps {
   type?: "text" | "password" | "email";
   name: string;
   value?: string;
-  error?: string
   onInput?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-
 }
 
 export class Input extends Block {
-  constructor({onInput, ...props}: InputProps) {
-    super({...props, events: {input: onInput}});
+  constructor({onInput, onFocus, onBlur, ...props}: InputProps) {
+    super({...props, events: {input: onInput, focus: onFocus, blur: onBlur}});
   }
 
   protected render(): string {
-    return template;
+    // return template;
+    return `
+      <input type="{{type}}" name="{{name}}" class="form-input__input">
+    `;
   }
 }
