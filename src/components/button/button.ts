@@ -11,6 +11,8 @@ interface ButtonProps {
 }
 
 export class Button extends Block {
+  static cName = "Button";
+  
   constructor({title, link, link_name,  onClick}: ButtonProps) {
     super({title, link, link_name, events: {click: onClick}});
   }

@@ -15,6 +15,8 @@ interface ControlledInputProps {
 }
 
 export class ControlledInput extends Block {
+  static cName = "ControlledInput";
+
   constructor(props: ControlledInputProps) {
     super({...props,
       onBlur: (e: FocusEvent): void => {

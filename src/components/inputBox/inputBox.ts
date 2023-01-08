@@ -4,6 +4,8 @@ import template from "bundle-text:./template.hbs";
 import "./inputBox.scss";
 
 export class InputBox extends Block {
+  static cName = "InputBox";
+
   constructor() {
     super();
 

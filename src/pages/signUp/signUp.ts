@@ -34,7 +34,6 @@ export class SignUp extends Block {
 //    return template;
     return `
       <div class="container">
-        {{{Header}}}
         <div class="form-box">
           <form action="#" class="form">
               <fieldset>

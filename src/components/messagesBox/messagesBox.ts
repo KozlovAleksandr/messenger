@@ -6,7 +6,7 @@ import "./messagesBox.scss";
 
 
 export class MessagesBox extends Block {
-
+  static cName = "MessagesBox";
 
   protected render(): string {
     return template;

@@ -8,6 +8,8 @@ interface InputErrorProps {
 }
 
 export class InputError extends Block {
+  static cName = "InputError";
+
   constructor({text}: InputErrorProps) {
     super({text});
   }

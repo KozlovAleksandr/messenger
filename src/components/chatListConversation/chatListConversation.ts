@@ -10,6 +10,8 @@ interface ChatListConversationProps {
 }
 
 export class ChatListConversation extends Block {
+  static cName = "ChatListConversation";
+
   constructor({displayName, time, message}: ChatListConversationProps) {
     super({displayName, time, message});
   }
