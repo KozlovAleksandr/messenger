@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.chat__link {
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0878A4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    & img {
+        height: 40px;
+        margin-right: 10px;
+    }
+}

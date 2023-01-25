@@ -1,6 +1,6 @@
 import Block from "core/Block";
 import template from "bundle-text:./template.hbs";
-import { valodateForm, VatidateRuleType } from "helpers/validateForms";
+import { validateForm, VatidateRuleType } from "helpers/validateForms";
 
 
 import "./controlledInput.scss";
@@ -10,6 +10,7 @@ interface ControlledInputProps {
   type?: "text" | "password" | "email";
   name?: string;
   error?: string;
+  value?: string;
   onInput?: () => void;
   onFocus?: () => void;
 }
@@ -26,28 +27,31 @@ export class ControlledInput extends Block {
         let error = "";
 
         if (inputEl.name == "first_name" || inputEl.name == "second_name") {
-          error = valodateForm([
+          error = validateForm([
             {type: VatidateRuleType.Name, value: inputEl.value},
-          ]);
+          ]).errorMessage;
         } else if (inputEl.name == "login") {
-          error = valodateForm([
+          error = validateForm([
             {type: VatidateRuleType.Login, value: inputEl.value},
-          ]);
+          ]).errorMessage;
         } else if (inputEl.name == "password") {
-          error = valodateForm([
+          error = validateForm([
             {type: VatidateRuleType.Password, value: inputEl.value},
-          ]);
+          ]).errorMessage;
         } else if (inputEl.name == "email") {
-          error = valodateForm([
+          error = validateForm([
             {type: VatidateRuleType.Email, value: inputEl.value},
-          ]);
+          ]).errorMessage;
         } else if (inputEl.name == "phone") {
-          error = valodateForm([
+          error = validateForm([
             {type: VatidateRuleType.Phone, value: inputEl.value},
-          ]);
+          ]).errorMessage;
         }
+        this.setProps({
+            
+        })
  
-        // const error = valodateForm([
+        // const error = validateForm([
         //   {type: VatidateRuleType.Name, value: inputEl.value},
         //   {type: VatidateRuleType.Login, value: inputEl.value},
         //   {type: VatidateRuleType.Password, value: inputEl.value},
@@ -68,6 +72,7 @@ export class ControlledInput extends Block {
         {{{Input 
             type="{{type}}" 
             name="{{name}}"
+            value=""
             onInput=onInput
             onFocus=onFocus
             onBlur=onBlur

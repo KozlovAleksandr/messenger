@@ -1,32 +1,16 @@
 @import '../../styles/variables.scss';
 
-.form-btn {
-
-    &__group {
-    align-items: center;
-    text-align: center;
-    }
-
-    &__btn {
-        width: 280px;
-        height: 44px;
-        border-radius: 8px;
-        border: none;
-        background-color: $darkColor;
-        color: $secondLightColor;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        cursor: pointer;
-        margin-top: 74px;
-    }
-    &__link {
-        a {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #0878A4;
-            text-align: center;
-            font-weight: 300;
-        }
-    }
+.form-btn__btn {
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    background-color: $darkColor;
+    color: $secondLightColor;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
 }
+

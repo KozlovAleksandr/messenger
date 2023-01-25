@@ -1,4 +1,5 @@
 import Block from "../../core/Block";
+import inputArrow from "../../asserts/inputArrow.svg"
 import template from "bundle-text:./template.hbs";
 
 import "./inputBox.scss";

@@ -11,7 +11,7 @@
     &__header {
         position: relative;
         width: 100%;
-        height: 100px;
+        height: 92px;
         border-bottom: 1px solid #BE9063;
     }
 
@@ -34,7 +34,7 @@
     &__chatlist {
         position: relative;
         width: 100%;
-        height: calc(100% - 100px);
+        height: calc(100% - 160px);
         overflow-y: auto;
     }
 }
@@ -46,7 +46,7 @@
     &__header {
         position: relative;
         width: 100%;
-        height: 100px;
+        height: 92px;
         border-bottom: 1px solid #BE9063;
     }
 }

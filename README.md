@@ -1,20 +1,23 @@
 <h1 align="center">Привет 👋 , <br>добро пожаловать в мой проект</h1>
 
-<div>
-
-<p style="margin: 20px 0 0; font-size: 18px">📨 Текущий проект</p>
+## Tекущий проект
+📨
 <strong style="font-size: 18px">Chat</strong>
 
-<p style="margin: 20px 0 0; font-size: 18px">🚀 Команда для сборки и запуска</p>
-<strong style="font-size: 20px; color: #BE9063">$ npm run dev</strong>
+## Команда для сборки и запуска
+🚀 
+`npm run dev` - режим разработчика
+`npm run start` - запуск проекта на порту 3000
 
-
-<p style="margin: 20px 0 0; font-size: 18px">🖍️ Ссылка на макет в Figma</p>
+## Ссылка на макет в Figma
+🖍️ 
 <a style="font-size: 17px" href="https://www.figma.com/file/dxrgJjJwtT4jrylJRxOn1G/chat?node-id=0%3A1&t=rgZMB9TfVY0SI8FZ-0">МАКЕТ</a>
 
-<p>🖥️ Ссылка на сайт в Netlify</p>
+## Ссылка на сайт в netlify
+🖥️ 
 <a href="https://famous-stardust-438380.netlify.app">САЙТ</a>
 
+<div>
 <h3 align="left">Используемые технологии:</h3>
 <p align="left"> 
     <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
