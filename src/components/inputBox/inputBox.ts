@@ -4,11 +4,19 @@ import template from "bundle-text:./template.hbs";
 
 import "./inputBox.scss";
 
+interface InputBoxProps {
+  onSubmit?: () => void;
+}
+
 export class InputBox extends Block {
   static cName = "InputBox";
 
-  constructor() {
-    super();
+  constructor({ onSubmit }: InputBoxProps) {
+    super({
+      events: {
+        submit: onSubmit,
+      },
+    });
 
       this.setProps({
         error: "",
@@ -25,7 +33,16 @@ export class InputBox extends Block {
     }
   }
 
+
   protected render(): string {
-    return template;
+    return `
+    <form class="chat-right__input-box">
+      <!-- <img class="clip" src="../../asserts/clip.svg" alt="clip"> -->
+      <button type="submit">ADD</button>
+      <input type="text" name="message" placeholder="Message...">
+      <button type="submit">SEND</button>
+      <!-- <img class="inputArrow" src="../../asserts/inputArrow.svg" alt="inputArrow"> -->
+    </form>
+    `;
   }
 }

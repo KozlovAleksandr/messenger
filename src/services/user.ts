@@ -33,7 +33,7 @@ export const changeData = async (
   }
 
   const responseUser = await UserAPI.user(response.id);
-
+  
   dispatch({
     isLoading: false,
     loginFormError: null,

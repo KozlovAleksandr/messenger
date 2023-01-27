@@ -50,6 +50,16 @@ class Chats extends Block {
     this.props.store.dispatch(chooseChat, chatId); 
   }
 
+  sendMessage(event: SubmitEvent): void {
+    console.log("click");
+    event.preventDefault();
+    const outgoingMessage = document.querySelector("textarea[name=\"message\"]");
+    if (outgoingMessage) {
+      Messages.sendMessage(outgoingMessage.value);
+      outgoingMessage.value = "";
+    }
+  }
+
   onLogout() {
     this.props.store.dispatch(logout);
   }
@@ -93,10 +103,13 @@ class Chats extends Block {
               }}}
           </div>
           <div class="chat-right">
+            {{#if ${window.store.getState().chatId !== null} }}
               <div class="chat-right__header">
-              </div>
+                <div class="chat-right__header__title">${window.store.getState().chatTitle != undefined ? window.store.getState().chatTitle : ""}</div>
+              </div>              
               {{{MessagesBox}}}
-              {{{InputBox}}}
+              {{{InputBox onSubmit=sendMessage}}}
+            {{/if}}
           </div>
       </div>
     </div>

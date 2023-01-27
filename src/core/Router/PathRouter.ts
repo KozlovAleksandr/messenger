@@ -1,6 +1,7 @@
 import { CoreRouter } from "./CoreRouter";
 
 export class PathRouter implements CoreRouter {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   private routes: Record<string, Function> = {};
 
   private isStarted = false;
@@ -31,6 +32,7 @@ export class PathRouter implements CoreRouter {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   use(hash: string, callback: Function) {
     this.routes[hash] = callback;
     return this;

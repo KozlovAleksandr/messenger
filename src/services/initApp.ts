@@ -1,4 +1,5 @@
 import authAPI from "../api/auth";
+import ChatsAPI from "../api/ChatsApi";
 
 import { UserDTO } from "api/types";
 import type { Dispatch } from "core";
@@ -14,12 +15,13 @@ export async function initApp(dispatch: Dispatch<AppState>) {
 
   try {
     const response = await authAPI.me();
-
+    const responseChats = await ChatsAPI.getChats();
+    
     if (apiHasError(response)) {
       return;
     }
 
-    dispatch({ user: transformUser(response as UserDTO) });
+    dispatch({ user: transformUser(response as UserDTO), chats: responseChats });
   } catch (err) {
     // console.error(err);
   } finally {

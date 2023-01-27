@@ -1,4 +1,4 @@
-import { BlockClass, Store } from "core";
+import { Store } from "../core/Store";
 
 type WithStateProps = { store: Store<AppState> };
 
@@ -12,7 +12,7 @@ function withStore<P extends WithStateProps>(WrappedBlock: any) {
 
     __onChangeStoreCallback = () => {
       this.setProps({ ...this.props, store: window.store });
-    }
+    };
 
     componentDidMount(props: P) {
       super.componentDidMount(props);

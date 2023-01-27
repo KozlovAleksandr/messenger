@@ -15,12 +15,12 @@ const routes = [
   {
     path: "/messenger",
     block: Screens.Chat,
-    shouldAuthorized: false,
+    shouldAuthorized: true,
   },
   {
     path: "/settings",
     block: Screens.SettingsPage,
-    shouldAuthorized: false,
+    shouldAuthorized: true,
   },
   {
     path: "*",

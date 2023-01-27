@@ -51,13 +51,19 @@ export class WSTransport extends EventBus {
 
   private listenEvents(socket: WebSocket): void {
     socket.addEventListener("open", () => this.emit(EVENTS.OPEN));
+
     socket.addEventListener("close", () => this.emit(EVENTS.CLOSE));
+
     socket.addEventListener("error", error => this.emit(EVENTS.ERROR, error));
+
     socket.addEventListener("message", message => {
       try {
         const data = JSON.parse(message.data);
+
         if (data.type && data.type === "pong") return;
+
         if (data.type === "user connected") return;
+        
         this.emit(EVENTS.MESSAGE, data);
       } catch (error) {
         console.log(error);
