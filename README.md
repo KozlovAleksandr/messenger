@@ -15,7 +15,7 @@
 
 ## Ссылка на сайт в netlify
 🖥️ 
-<a href="https://famous-stardust-438380.netlify.app">САЙТ</a>
+<a href="https://unique-chimera-1ec80b.netlify.app">САЙТ</a>
 
 <div>
 <h3 align="left">Используемые технологии:</h3>
