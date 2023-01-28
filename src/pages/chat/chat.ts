@@ -32,6 +32,7 @@ class Chats extends Block {
       onLogout: (event: Event) => this.onLogout(),
       onCreateChat: () => this.onCreateChat(),
       onChooseChat: (event: Event) => this.onChooseChat(event),
+      sendMessage: (event: SubmitEvent) => this.sendMessage(event),
     });
   }
 
@@ -40,8 +41,10 @@ class Chats extends Block {
   }
 
   onCreateChat() {
-    const date = new Date().toLocaleDateString();
-    this.props.store.dispatch(createChat, { title: date });
+    const chatName = prompt("Name your chat");
+    if (chatName) {
+      this.props.store.dispatch(createChat, { title: chatName });
+    }
   }
 
   onChooseChat(event: Event) {
@@ -51,10 +54,9 @@ class Chats extends Block {
   }
 
   sendMessage(event: SubmitEvent): void {
-    console.log("click");
     event.preventDefault();
-    const outgoingMessage = document.querySelector("textarea[name=\"message\"]");
-    if (outgoingMessage) {
+    const outgoingMessage = document.querySelector("input[name=\"message\"]");
+    if (outgoingMessage && outgoingMessage.value != "") {
       Messages.sendMessage(outgoingMessage.value);
       outgoingMessage.value = "";
     }
