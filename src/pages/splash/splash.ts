@@ -1,9 +1,7 @@
 import { Block } from "core";
 import "./splash.scss";
 
-type SplashPageProps = {};
-
-export class SplashPage extends Block<SplashPageProps> {
+export class SplashPage extends Block {
   static componentName = "SplashPage";
   
   render() {

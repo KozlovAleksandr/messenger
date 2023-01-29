@@ -6,8 +6,6 @@ import { logout } from "../../services/auth";
 import { createChat, chooseChat } from "../../services/chats";
 import Messages from "../../services/messages";
 
-import template from "bundle-text:./template.hbs";
-
 import "./chat.scss";
 
 type ChatPageProps = {

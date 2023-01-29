@@ -7,7 +7,6 @@ import type { Dispatch } from "core";
 import transformUser from "../utils/apiTransformers";
 import apiHasError from "../utils/apiHasError";
 
-
 export async function initApp(dispatch: Dispatch<AppState>) {
 
   // Ручкая задержка для демонстрации загрузочного экрана
@@ -23,7 +22,7 @@ export async function initApp(dispatch: Dispatch<AppState>) {
 
     dispatch({ user: transformUser(response as UserDTO), chats: responseChats });
   } catch (err) {
-    // console.error(err);
+    console.error(err);
   } finally {
     dispatch({ appIsInited: true });
   }
