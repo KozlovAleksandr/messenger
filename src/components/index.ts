@@ -1,16 +1,16 @@
-export { default as Button } from "./button";
-export { default as ButtonChatList } from "./buttonChatList";
+export { Button } from "./button/button";
+export { ButtonChatList } from "./buttonChatList/buttonChatList";
 
-export { default as Link } from "./link";
-export { default as LinkSettings } from "./linkSettings";
+export { Link } from "./link/link";
+export { LinkSettings } from "./linkSettings/linkSettings";
 
 
-export { default as ChatListConversation } from "./chatListConversation";
-export { default as ControlledInput } from "./controlledInput";
-// export { default as Footer } from "./footer";
-// export { default as Header } from "./header";
-export { default as Input } from "./input";
-export { default as InputBox } from "./inputBox";
+export { ChatListConversation } from "./chatListConversation/chatListConversation";
+export { ControlledInput } from "./controlledInput/controlledInput";
+// export { Footer } from "./footer/footer";
+// export { Header } from "./header/header";
+export { Input } from "./input/input";
+export { InputBox } from "./inputBox/inputBox";
 
-export { default as InputError } from "./inputError";
-export { default as MessagesBox } from "./messagesBox";
+export { InputError } from "./inputError/inputError";
+export { MessagesBox } from "./messagesBox/messagesBox";

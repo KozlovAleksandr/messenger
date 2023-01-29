@@ -1,5 +1,4 @@
 import Block from "core/Block";
-import template from "bundle-text:./template.hbs";
 import { validateForm, VatidateRuleType } from "helpers/validateForms";
 
 
@@ -49,7 +48,7 @@ export class ControlledInput extends Block {
         }
         this.setProps({
             
-        })
+        });
  
         // const error = validateForm([
         //   {type: VatidateRuleType.Name, value: inputEl.value},

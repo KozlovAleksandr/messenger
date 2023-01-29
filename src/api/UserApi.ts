@@ -25,19 +25,19 @@ export class UserAPI {
     this.apiInstance = new HTTPTransport();
   }
 
-  data(data: ProfileRequestData) {
+  putData(data: ProfileRequestData) {
     return this.apiInstance.put("user/profile", { data });
   }
 
-  avatar(data) {
+  putAvatar(data: any) {
     return this.apiInstance.put("user/profile/avatar", { data, isFormData: true });
   }
 
-  password(data: PasswordRequestData) {
+  putPassword(data: PasswordRequestData) {
     return this.apiInstance.put("user/password", { data });
   }
 
-  user(id: number) {
+  getUser(id: number) {
     return this.apiInstance.get(`user/${id}`);
   }
 

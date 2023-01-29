@@ -24,11 +24,11 @@ export class ChatsAPI {
     return this.apiInstance.get("chats");
   }
 
-  create(data: CreateChatRequestData) {
+  createChat(data: CreateChatRequestData) {
     return this.apiInstance.post("chats", { data });
   }
 
-  delete(data: DeleteChatRequestData) {
+  deleteChat(data: DeleteChatRequestData) {
     return this.apiInstance.delete("chats", { data });
   }
 

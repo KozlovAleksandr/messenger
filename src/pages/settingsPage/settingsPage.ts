@@ -3,8 +3,6 @@ import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 import withUser from "../../utils/withUser";
 
-
-import template from "bundle-text:./template.hbs";
 import { validateForm, VatidateRuleType } from "helpers/validateForms";
 import { changeAvatar, changeData } from "../../services/user";
 
@@ -41,7 +39,7 @@ class SettingsPage extends Block {
       display_name: (document.querySelector("input[name=\"display_name\"]") as HTMLInputElement).value,
       phone: (document.querySelector("input[name=\"phone\"]") as HTMLInputElement).value,
     };
-    console.log(this.props.user)
+    console.log(this.props.user);
     this.props.store.dispatch(changeData, profileData);
   }
 

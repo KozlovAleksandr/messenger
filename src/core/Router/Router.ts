@@ -1,5 +1,6 @@
 class Block {
-    getContent() { }
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    getContent() {}
     
     show() {
       console.log("show");
