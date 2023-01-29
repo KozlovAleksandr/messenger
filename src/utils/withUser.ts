@@ -16,7 +16,7 @@ function withUser<P extends WithUserProps>(WrappedBlock: BlockClass<P>) {
         // @ts-expect-error this is not typed
         this.setProps({ ...this.props, user: nextState.user });
       }
-    };
+    }
 
     componentDidMount(props: P) {
       super.componentDidMount(props);

@@ -10,7 +10,6 @@ export class PathRouter implements CoreRouter {
     if (!this.isStarted) {
       this.isStarted = true;
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       window.onpopstate = (event: PopStateEvent) => {
         this.onRouteChange.call(this);
       };

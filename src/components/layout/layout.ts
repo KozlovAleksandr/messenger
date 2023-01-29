@@ -2,8 +2,9 @@ import Block from "../../core/Block";
 
 import "./layout.scss";
 
+interface LayoutProps {}
 
-export class Layout extends Block {
+export class Layout extends Block<LayoutProps> {
   static componentName = "Layout";
 
   protected render(): string {
@@ -17,6 +18,6 @@ export class Layout extends Block {
         </div>
         <div class="screen__content" data-layout=1></div>
       </div>
-    `;
+    `
   }
 }

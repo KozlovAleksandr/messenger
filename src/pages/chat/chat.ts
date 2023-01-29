@@ -27,7 +27,6 @@ class Chats extends Block {
 
     this.setProps({
       onNavigate: () => this.onNavigate(),
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onLogout: (event: Event) => this.onLogout(),
       onCreateChat: () => this.onCreateChat(),
       onChooseChat: (event: Event) => this.onChooseChat(event),

@@ -19,11 +19,12 @@ type UserPayload = {
 
 export const createChat = async (
   dispatch: Dispatch<AppState>,
+  state: AppState,
   action: CreateChatPayload,
 ) => {
   dispatch({ isLoading: true });
 
-  const response = await ChatsAPI.createChat(action);
+  const response = await ChatsAPI.create(action);
 
   if (apiHasError(response)) {
     dispatch({ isLoading: false, loginFormError: response.reason });
@@ -41,6 +42,7 @@ export const createChat = async (
 
 export const chooseChat = async (
   dispatch: Dispatch<AppState>,
+  state: AppState,
   action: string,
 ) => {
   dispatch({ isLoading: true });
@@ -49,7 +51,7 @@ export const chooseChat = async (
 
   const responseToken = await ChatsAPI.getToken(action);
 
-  await Messages.connect(Number(action), responseToken.token, "0");
+  await Messages.connect(Number(action), responseToken.token, '0');
 
   const chat = window.store.getState().chats?.filter(el => el.id.toString() === action);
 
@@ -69,7 +71,7 @@ export const deleteChat = async (
 ) => {
   dispatch({ isLoading: true });
 
-  const response = await ChatsAPI.deleteChat({ chatId: Number(action) });
+  const response = await ChatsAPI.delete({ chatId: Number(action) });
 
   if (apiHasError(response)) {
     dispatch({ isLoading: false, loginFormError: response.reason });

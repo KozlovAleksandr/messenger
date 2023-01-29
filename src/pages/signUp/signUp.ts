@@ -4,6 +4,10 @@ import { register } from "../../services/auth";
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 
+import template from "bundle-text:./template.hbs";
+import { validateForm, VatidateRuleType } from "helpers/validateForms";
+
+
 import "./form.scss";
 
 type SignUpPageProps = {
@@ -65,6 +69,7 @@ class SignUp extends Block<SignUpPageProps> {
   
 
   render(): string {
+//    return template;
     return `
       <div class="container">
         <div class="form-box">

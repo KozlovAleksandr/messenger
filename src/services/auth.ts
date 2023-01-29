@@ -28,6 +28,7 @@ export const logout = async (dispatch: Dispatch<AppState>) => {
 
 export const login = async (
   dispatch: Dispatch<AppState>,
+  state: AppState,
   action: LoginPayload,
 ) => {
   dispatch({ isLoading: true });

@@ -1,5 +1,9 @@
 import Block from "../../core/Block";
 import withStore from "../../utils/withStore";
+import formatDate from 'utils/helpers/formatDate';
+import { addUser, deleteChat, deleteUser } from 'services/chats';
+
+import template from "bundle-text:./template.hbs";
 
 import "./messagesBox.scss";
 
@@ -16,7 +20,9 @@ export class MessagesBox extends Block {
   constructor({name, users}: MessagesBoxProps) {
     super({name, users});
   
-    this.setProps({});
+    this.setProps({
+
+    });
 
     MessagesBox.chatUsers = window.store.getState().users;
   }

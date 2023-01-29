@@ -10,4 +10,4 @@ export { request } from "./apiRequest";
 
 export { default as renderDOM } from "./renderDOM";
 
-export { WSTransport , EVENTS } from "./WSTransport";
+// export { WSTransport , EVENTS } from "./WSTransport";

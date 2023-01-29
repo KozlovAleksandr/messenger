@@ -26,7 +26,7 @@ export default class Block<P = any> {
 
   eventBus: () => EventBus<Events>;
 
-  protected state: unknown = {};
+  protected state: any = {};
   protected refs: { [key: string]: HTMLElement } = {};
 
   public static componentName?: string;
@@ -46,7 +46,7 @@ export default class Block<P = any> {
     eventBus.emit(Block.EVENTS.INIT, this.props);
   }
 
-  private _checkInDom() {
+  _checkInDom() {
     const elementInDOM = document.body.contains(this._element);
 
     if (elementInDOM) {
@@ -57,7 +57,7 @@ export default class Block<P = any> {
     this.eventBus().emit(Block.EVENTS.FLOW_CWU, this.props);
   }
 
-  private _registerEvents(eventBus: EventBus<Events>) {
+  _registerEvents(eventBus: EventBus<Events>) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
@@ -65,11 +65,10 @@ export default class Block<P = any> {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
-  private _createResources() {
+  _createResources() {
     this._element = this._createDocumentElement("div");
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected getStateFromProps(props: any): void {
     this.state = {};
   }
@@ -85,18 +84,16 @@ export default class Block<P = any> {
     this.componentDidMount(props);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   componentDidMount(props: P) {}
 
-  private _componentWillUnmount() {
+  _componentWillUnmount() {
     this.eventBus().destroy();
     this.componentWillUnmount();
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   componentWillUnmount() {}
 
-  private _componentDidUpdate(oldProps: P, newProps: P) {
+  _componentDidUpdate(oldProps: P, newProps: P) {
     const response = this.componentDidUpdate(oldProps, newProps);
     if (!response) {
       return;
@@ -128,7 +125,7 @@ export default class Block<P = any> {
     return this._element;
   }
 
-  private _render() {
+  _render() {
     const fragment = this._compile();
 
     this._removeEvents();
@@ -158,8 +155,7 @@ export default class Block<P = any> {
     return this.element!;
   }
 
-  private _makePropsProxy(props: any): any {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
+  _makePropsProxy(props: any): any {
     const self = this;
 
     return new Proxy(props as unknown as object, {
@@ -181,11 +177,11 @@ export default class Block<P = any> {
     }) as unknown as P;
   }
 
-  private _createDocumentElement(tagName: string) {
+  _createDocumentElement(tagName: string) {
     return document.createElement(tagName);
   }
 
-  private _removeEvents() {
+  _removeEvents() {
     const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events || !this._element) {
@@ -197,7 +193,7 @@ export default class Block<P = any> {
     });
   }
 
-  private _addEvents() {
+  _addEvents() {
     const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events) {
@@ -209,7 +205,7 @@ export default class Block<P = any> {
     });
   }
 
-  private _compile(): DocumentFragment {
+  _compile(): DocumentFragment {
     const fragment = document.createElement("template");
 
     const template = Handlebars.compile(this.render());

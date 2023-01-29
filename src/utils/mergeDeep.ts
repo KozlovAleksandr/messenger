@@ -1,6 +1,5 @@
 export function mergeDeep(lhs: Indexed, rhs: Indexed): Indexed {
-    for (const p in rhs) {
-      // eslint-disable-next-line no-prototype-builtins
+    for (let p in rhs) {
       if (!rhs.hasOwnProperty(p)) {
         continue;
       }

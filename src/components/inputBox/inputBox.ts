@@ -1,4 +1,6 @@
 import Block from "../../core/Block";
+import inputArrow from "../../asserts/inputArrow.svg"
+import template from "bundle-text:./template.hbs";
 
 import "./inputBox.scss";
 
@@ -36,9 +38,9 @@ export class InputBox extends Block {
     return `
     <form class="chat-right__input-box">
       <!-- <img class="clip" src="../../asserts/clip.svg" alt="clip"> -->
-      <button  class="input-box__button" type="submit">ADD</button>
+      <button type="submit">ADD</button>
       <input type="text" name="message" placeholder="Message...">
-      <button class="input-box__button" type="submit">SEND</button>
+      <button type="submit">SEND</button>
       <!-- <img class="inputArrow" src="../../asserts/inputArrow.svg" alt="inputArrow"> -->
     </form>
     `;
