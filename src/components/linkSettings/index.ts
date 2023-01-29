@@ -1,1 +1,1 @@
-export { LinkSettings as default } from "./linkSettings";
+export { LinkSettings } from "./linkSettings";
