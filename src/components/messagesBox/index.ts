@@ -1,1 +1,1 @@
-export { MessagesBox } from "./messagesBox";
+export { MessagesBox as default } from "./messagesBox";

@@ -1,1 +1,1 @@
-export { ChatListConversation } from "./chatListConversation";
+export { ChatListConversation as default } from "./chatListConversation";

@@ -1,1 +1,1 @@
-export { InputBox } from "./inputBox";
+export { InputBox as default } from "./inputBox";
