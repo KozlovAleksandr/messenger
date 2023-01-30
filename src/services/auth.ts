@@ -67,7 +67,7 @@ export const login = async (
 
 export const register = async (
   dispatch: Dispatch<AppState>,
-  state: AppState,
+  state: AppState, 
   action: RegisterPayload,
 ) => {
   dispatch({ isLoading: true });

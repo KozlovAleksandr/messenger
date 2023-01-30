@@ -22,13 +22,15 @@ export class ChatsAPI {
 
   getChats() {
     return this.apiInstance.get("chats");
+
   }
 
-  create(data: CreateChatRequestData) {
+  createChat(data: CreateChatRequestData) {
+    console.log("data", data);
     return this.apiInstance.post("chats", { data });
   }
 
-  delete(data: DeleteChatRequestData) {
+  deleteChat(data: DeleteChatRequestData) {
     return this.apiInstance.delete("chats", { data });
   }
 

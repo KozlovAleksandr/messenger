@@ -1,1 +1,1 @@
-export { ButtonChatList as default } from "./buttonChatList";
+export { ButtonChatList } from "./buttonChatList";

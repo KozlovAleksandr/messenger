@@ -20,19 +20,18 @@ type PasswordPayload = {
 
 export const changeData = async (
   dispatch: Dispatch<AppState>,
-  state: AppState,
   action: DataPayload,
 ) => {
   dispatch({ isLoading: true });
 
-  const response = await UserAPI.data(action);
+  const response = await UserAPI.putData(action);
 
   if (apiHasError(response)) {
     dispatch({ isLoading: false, loginFormError: response.reason });
     return;
   }
 
-  const responseUser = await UserAPI.user(response.id);
+  const responseUser = await UserAPI.getUser(response.id);
   
   dispatch({
     isLoading: false,
@@ -48,7 +47,7 @@ export const changePassword = async (
 ) => {
   dispatch({ isLoading: true });
 
-  const response = await UserAPI.password(action);
+  const response = await UserAPI.putPassword(action);
 
   if (apiHasError(response)) {
     dispatch({ isLoading: false, loginFormError: response.reason });
@@ -65,13 +64,13 @@ export const changeAvatar = async (
 ) => {
   dispatch({ isLoading: true });
 
-  const response = await UserAPI.avatar(action);
+  const response = await UserAPI.putAvatar(action);
 
   if (apiHasError(response)) {
     dispatch({ isLoading: false, loginFormError: response.reason });
     return;
   }
-  const responseUser = await UserAPI.user(response.id);
+  const responseUser = await UserAPI.getUser(response.id);
 
   dispatch({
     isLoading: false,

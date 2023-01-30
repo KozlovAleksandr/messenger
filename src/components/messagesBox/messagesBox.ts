@@ -1,9 +1,5 @@
 import Block from "../../core/Block";
 import withStore from "../../utils/withStore";
-import formatDate from 'utils/helpers/formatDate';
-import { addUser, deleteChat, deleteUser } from 'services/chats';
-
-import template from "bundle-text:./template.hbs";
 
 import "./messagesBox.scss";
 

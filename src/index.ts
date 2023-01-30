@@ -5,8 +5,6 @@ import { initApp } from "./services/initApp";
 import { defaultState } from "./store";
 import { initRouter } from "./router";
 import SplashScreen from "pages/splash";
-import Chats from "pages/chat/chat";
-
 
 import * as components from "./components";
 
