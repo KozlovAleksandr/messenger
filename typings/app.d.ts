@@ -56,10 +56,10 @@ declare global {
     content: string;
     file: null;
     id: number;
-    is_read: boolean;
+    isRead: boolean;
     time: string;
     type: string;
-    user_id: number;
+    userID: number;
   };
 
   export type NewMessage = {
@@ -67,7 +67,7 @@ declare global {
     id: number;
     time: string;
     type: string;
-    user_id: number;
+    userID: number;
   };
 }
 
