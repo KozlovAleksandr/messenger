@@ -1,40 +1,73 @@
-import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-import { valodateForm, VatidateRuleType } from "helpers/validateForms";
+import {Block, CoreRouter, Store} from "core";
+import { register } from "../../services/auth";
 
+import withRouter from "../../utils/withRouter";
+import withStore from "../../utils/withStore";
 
 import "./form.scss";
 
-export class SignUp extends Block {
-  constructor(){
-    super();
+type SignUpPageProps = {
+  router: CoreRouter;
+  store: Store<AppState>;
+  onNavigate?: () => void;
+  onRegister?: () => void;
+
+  formError?: () => string | null;
+};
+
+class SignUp extends Block<SignUpPageProps> {
+  static componentName = "SignUp";
+
+  constructor(props: SignUpPageProps){
+    super(props);
 
     this.setProps({
-      error: "",
-      firstNameValue: "",
-      secondNameValue: "",
-      loginValue: "",
-      passwordValue: "",
-      emailValue: "",
-      phoneValue: "",
-      onInput: (e: FocusEvent) => {
-        this.refs.firstNameInputRef.refs.errorRef.setProps({ text: "" });
-        this.refs.lastNameInputRef.refs.errorRef.setProps({ text: "" });
-        this.refs.loginInputRef.refs.errorRef.setProps({ text: "" });
-        this.refs.passwordInputRef.refs.errorRef.setProps({ text: "" });
-        this.refs.emailInputRef.refs.errorRef.setProps({ text: "" });
-        this.refs.phoneInputRef.refs.errorRef.setProps({ text: "" });
-      },
-      onBlur: () => console.log("onBlur"),
-      onFocus: () => console.log("onFocus"),
+      onNavigate: () => this.onNavigate(),
+      onRegister: (event: Event) => this.onRegister(event),
     });
+    // this.setProps({
+    //   error: "",
+    //   firstNameValue: "",
+    //   secondNameValue: "",
+    //   loginValue: "",
+    //   passwordValue: "",
+    //   emailValue: "",
+    //   phoneValue: "",
+    //   onInput: (e: FocusEvent) => {
+    //     this.refs.firstNameInputRef.refs.errorRef.setProps({ text: "" });
+    //     this.refs.lastNameInputRef.refs.errorRef.setProps({ text: "" });
+    //     this.refs.loginInputRef.refs.errorRef.setProps({ text: "" });
+    //     this.refs.passwordInputRef.refs.errorRef.setProps({ text: "" });
+    //     this.refs.emailInputRef.refs.errorRef.setProps({ text: "" });
+    //     this.refs.phoneInputRef.refs.errorRef.setProps({ text: "" });
+    //   },
+    //   onBlur: () => console.log("onBlur"),
+    //   onFocus: () => console.log("onFocus"),
+    // });
   }
+
+  onNavigate() {
+    this.props.router.go("/login");
+  }
+
+  onRegister(event: Event) {
+    const registerData = {
+      first_name: (document.querySelector("input[name=\"first_name\"]") as HTMLInputElement).value,
+      second_name: (document.querySelector("input[name=\"second_name\"]") as HTMLInputElement).value,
+      login: (document.querySelector("input[name=\"login\"]") as HTMLInputElement).value,
+      password: (document.querySelector("input[name=\"password\"]") as HTMLInputElement).value,
+      email: (document.querySelector("input[name=\"email\"]") as HTMLInputElement).value,
+      phone: (document.querySelector("input[name=\"phone\"]") as HTMLInputElement).value,
+    };
+    console.log(registerData);
+    this.props.store.dispatch(register, registerData);
+  }
+  
 
   render(): string {
 //    return template;
     return `
       <div class="container">
-        {{{Header}}}
         <div class="form-box">
           <form action="#" class="form">
               <fieldset>
@@ -93,7 +126,14 @@ export class SignUp extends Block {
                   name="phone"
                 }}}
                 {{#if error}}{{error}}{{/if}}
-                {{{Button title="sign in" link="#" link_name="create account"}}}
+                {{{Button 
+                  title="sign up"
+                  onClick=onRegister
+                }}}
+                {{{Link 
+                  title="login" 
+                  onClick=onNavigate
+                }}}
               </fieldset>
           </form>
         </div>
@@ -101,3 +141,5 @@ export class SignUp extends Block {
       `;
   }
 }
+
+export default withRouter(withStore(SignUp));

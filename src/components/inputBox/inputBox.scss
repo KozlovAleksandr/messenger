@@ -10,12 +10,10 @@
     justify-content: space-between;
     align-items:center;
 
-
-
     input {
         position: relative;
-        width: 95%;
-        margin: 0 22px;
+        width: 100%;
+        margin: 0 5px;
         padding: 10px 20px;
         border: none;
         outline: none;
@@ -29,5 +27,12 @@
         position: absolute;
         right: 40px;
     }
-
+    .input-box__button {
+        width: 70px;
+        height: 75%;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: $lightColor;
+    }
 }

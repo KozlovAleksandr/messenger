@@ -3,12 +3,14 @@ import Handlebars, { HelperOptions } from "handlebars";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface BlockConstructable<Props = any> {
+  cName: string;
+  componentName: string;
   new(props: Props): Block;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint, @typescript-eslint/no-explicit-any
 export default function registerComponent<Props extends any>(Component: BlockConstructable<Props>) {
-  Handlebars.registerHelper(Component.name, function (this: Props, { hash: { ref, ...hash }, data, fn }: HelperOptions) {
+  Handlebars.registerHelper(Component.cName || Component.componentName, function (this: Props, { hash: { ref, ...hash }, data, fn }: HelperOptions) {
     if (!data.root.children) {
       data.root.children = {};
     }

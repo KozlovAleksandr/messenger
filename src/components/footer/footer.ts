@@ -4,6 +4,9 @@ import template from "bundle-text:./template.hbs";
 import "./footer.scss";
 
 export class Footer extends Block {
+  static cName = "Footer";
+
+
   constructor(){
     super();
 

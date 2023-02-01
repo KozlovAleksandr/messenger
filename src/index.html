@@ -7,26 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Messanger</title>
     <link rel="stylesheet" href="./styles/app.scss">
-    <link rel="stylesheet" href="./components/header/header.scss">
+
+    <link rel="icon" href="./favicon.svg" type="image/png">
+    <title>Messanger</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header__list">
-                <nav class="menu">
-                    <ul class="menu__list">
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexSignIn.html">SIGN IN</a></li>
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexSignUp.html">SIGN UP</a></li>
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexChat.html">CHAT</a></li>
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexSettingsPage.html">SETTINGS</a></li>
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexError404.html">ERROR 404</a></li>
-                        <li class="menu__list-item"><a class="menu__list-link" href="indexError500.html">ERROR 5**</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <div id="app"></div>
+    <script type="module" src="./index.ts"></script>
 </body>
 </html>

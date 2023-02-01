@@ -1,5 +1,4 @@
 import Block from "core/Block";
-import template from "bundle-text:./template.hbs";
 
 import "./inputError.scss";
 
@@ -8,13 +7,14 @@ interface InputErrorProps {
 }
 
 export class InputError extends Block {
+  static cName = "InputError";
+
   constructor({text}: InputErrorProps) {
     super({text});
   }
   
 
   protected render(): string {
-    // return template;
     return `
       <div class="input-error">{{#if text}}{{text}}{{/if}}</div>
     `;

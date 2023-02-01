@@ -1,4 +1,7 @@
 .form__settings-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .avatar-input{
         width: .1px;
         height: .1px;
@@ -12,7 +15,7 @@
         display: block;
         width: 130px;
         cursor: pointer;
-        margin: 0 auto 38px;
+        margin: 0 auto 15px;
     }
 }
 

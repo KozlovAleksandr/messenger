@@ -5,14 +5,14 @@ import "./button.scss";
 
 interface ButtonProps {
   title: string;
-  link: string;
-  link_name: string;
   onClick: () => void;
 }
 
 export class Button extends Block {
-  constructor({title, link, link_name,  onClick}: ButtonProps) {
-    super({title, link, link_name, events: {click: onClick}});
+  static cName = "Button";
+
+  constructor({title, onClick}: ButtonProps) {
+    super({title, events: {click: onClick}});
   }
 
   protected render(): string {
