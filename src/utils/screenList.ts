@@ -1,8 +1,8 @@
-import SignIn from "pages/signIn/signIn";
-import SignUp from "pages/signUp/signUp";
-import Chat from "pages/chat/chat";
-import SettingsPage from "pages/settingsPage/settingsPage";
-import { BlockClass } from "core";
+import SignIn from "../pages/signIn/signIn";
+import SignUp from "../pages/signUp/signUp";
+import Chat from "../pages/chat/chat";
+import SettingsPage from "../pages/settingsPage/settingsPage";
+import { BlockClass } from "../core";
 
 export enum Screens {
   SignIn = "login",

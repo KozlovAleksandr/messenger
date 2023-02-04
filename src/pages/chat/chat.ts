@@ -1,12 +1,10 @@
-import {Block, CoreRouter, Store} from "core";
+import {Block, CoreRouter, Store} from "../../core";
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 import withChats from "../../utils/withChats";
 import { logout } from "../../services/auth";
 import { createChat, chooseChat } from "../../services/chats";
 import Messages from "../../services/messages";
-
-import "./chat.scss";
 
 type ChatPageProps = {
   router: CoreRouter;

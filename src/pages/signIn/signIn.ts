@@ -1,14 +1,11 @@
-import {Block, CoreRouter, Store} from "core";
+import {Block, CoreRouter, Store} from "../../core";
 import { login } from "../../services/auth";
 
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 
-// import template from "bundle-text:./template.hbs";
 // import { validateForm, VatidateRuleType } from "helpers/validateForms";
 // import ControlledInput from "components/controlledInput";
-
-import "./form.scss";
 
 type LoginPageProps = {
   router: CoreRouter;

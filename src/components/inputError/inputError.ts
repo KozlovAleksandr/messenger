@@ -1,6 +1,4 @@
-import Block from "core/Block";
-
-import "./inputError.scss";
+import Block from "../../core/Block";
 
 interface InputErrorProps {
   text?: string;

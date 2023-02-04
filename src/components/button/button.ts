@@ -1,7 +1,4 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./button.scss";
 
 interface ButtonProps {
   title: string;
@@ -16,6 +13,8 @@ export class Button extends Block {
   }
 
   protected render(): string {
-    return template;
+    return `
+    <button class="form-btn__btn">{{ title }}</button>
+    `;
   }
 }

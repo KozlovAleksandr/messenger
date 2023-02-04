@@ -1,7 +1,5 @@
 import Block from "../../core/Block";
 
-import "./inputBox.scss";
-
 interface InputBoxProps {
   onSubmit?: () => void;
 }

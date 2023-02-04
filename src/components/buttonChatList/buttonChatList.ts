@@ -1,7 +1,4 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./buttonChatList.scss";
 
 interface ButtonChatListProps {
   title: string;
@@ -18,6 +15,8 @@ export class ButtonChatList extends Block {
   }
 
   protected render(): string {
-    return template;
+    return `
+    <button class="chat-list__btn {{className}}">{{ title }}</button>
+    `;
   }
 }

@@ -1,7 +1,4 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./chatListConversation.scss";
 
 interface ChatListConversationProps {
   id: string;
@@ -19,6 +16,21 @@ export class ChatListConversation extends Block {
   }
 
   protected render(): string {
-    return template;
+    return `
+    <div class="conversation" id={{id}}>
+      <div class="conversation__avatar">
+          <div class="avatar"></div>
+      </div>
+      <div class="conversation__datails">
+          <div class="conversation__datails-top">
+              <p>{{ displayName }}</p>
+              <p class="time">{{ time }}</p>
+          </div>
+          <div class="conversation__datails-bottom">
+              <p> {{ message }}</p>
+          </div>
+      </div>
+    </div>
+    `;
   }
 }

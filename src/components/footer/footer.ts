@@ -1,11 +1,7 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./footer.scss";
 
 export class Footer extends Block {
   static cName = "Footer";
-
 
   constructor(){
     super();
@@ -13,6 +9,12 @@ export class Footer extends Block {
   }
 
   render(): string {
-    return template;
+    return `
+    <footer class="footer">
+      <div class="container">
+          <div class="footer__block"></div>
+      </div>
+    </footer>
+    `;
   }
 }
