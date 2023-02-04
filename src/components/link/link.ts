@@ -15,7 +15,7 @@ export class Link extends Block {
 
   protected render(): string {
     return `
-    <button class="form-btn__link" type="button">\{{ title }}</button>
+    <button class="form-btn__link" type="button">{{ title }}</button>
     `;
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // require('babel-core/register');
 
 import { renderDOM, registerComponent, PathRouter, CoreRouter, Store } from "./core";

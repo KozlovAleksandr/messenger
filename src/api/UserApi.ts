@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import HTTPTransport from "../utils/HTTPTransport";
 
 type ProfileRequestData = {

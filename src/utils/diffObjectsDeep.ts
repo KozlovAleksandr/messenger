@@ -1,4 +1,5 @@
-
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const diffObjectsDeep = {
     VALUE_CREATED: "created",
     VALUE_UPDATED: "updated",
@@ -63,7 +64,6 @@ export const diffObjectsDeep = {
       }
       return this.VALUE_UPDATED;
     },
-    // eslint-disable-next-line @typescript-eslint/ban-types
     isFunction: function (x: unknown): x is Function {
       return Object.prototype.toString.call(x) === "[object Function]";
     },

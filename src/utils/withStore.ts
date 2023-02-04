@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Store } from "../core/Store";
 
 type WithStateProps = { store: Store<AppState> };

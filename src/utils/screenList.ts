@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import SignIn from "../pages/signIn/signIn";
 import SignUp from "../pages/signUp/signUp";
 import Chat from "../pages/chat/chat";
