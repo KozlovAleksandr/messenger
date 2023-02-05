@@ -37,25 +37,28 @@
     <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" height="40"/> 
     </a>
-    <a href="https://stylelint.io" target="_blank" rel="noreferrer"> 
-        <img src="https://camo.githubusercontent.com/aa04feafbd080140cd834905cf171ccf7b06fc5f1f1ae07ce9879218165312d1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f7374796c656c696e742e737667" alt="stylelint" height="40"/>  
-    </a>
-    <hr/>
     <a href="https://handlebarsjs.com" target="_blank" rel="noreferrer"> 
         <img src="https://handlebarsjs.com/images/handlebars_logo.png" alt="handlebars" height="40"/> 
     </a> 
-    <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> 
-        <img src="https://webpack.js.org/icon-square-small-slack.9281492bb267314634b4.png" alt="webpack" height="40"/> 
-    </a>
+    <hr/>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" height="40"/> 
     </a> 
     <a href="https://nodejs.org" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" height="40"/> 
-    </a> 
-    <hr/>
+    </a>
     <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" height="40"/> 
+    </a>
+    <a href="https://jestjs.io/ru/" target="_blank" rel="noreferrer"> 
+        <img src="https://www.jetbrains.com/pycharm/guide/static/5fffc5841d0abba2e6684f13fe6d003f/jest.svg" alt="jest" height="40"/> 
+    </a>
+    <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> 
+        <img src="https://webpack.js.org/icon-square-small-slack.9281492bb267314634b4.png" alt="webpack" height="40"/> 
+    </a>
+    <hr/>
+    <a href="https://stylelint.io" target="_blank" rel="noreferrer"> 
+        <img src="https://static-00.iconduck.com/assets.00/file-type-stylelint-icon-512x488-69sts49e.png" alt="stylelint" height="40"/>  
     </a>
     <a href="https://eslint.org" target="_blank" rel="noreferrer"> 
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/1200px-ESLint_logo.svg.png" alt="eslint" height="40"/> 
