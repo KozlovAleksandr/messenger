@@ -16,7 +16,6 @@ export class LinkSettings extends Block {
   protected render(): string {
     return `
     <button class="chat__link" type="button">
-      <img src="../../asserts/settings-gear.svg" alt="">
       {{{title}}}
     </button>
     `;
