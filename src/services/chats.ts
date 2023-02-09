@@ -1,5 +1,5 @@
 import ChatsAPI from "../api/ChatsApi";
-import UserAPI from "../api/ChatsApi";
+import UserAPI from "../api/UserApi";
 import apiHasError from "../utils/apiHasError";
 import type { Dispatch } from "core";
 import Messages from "../services/messages";
@@ -115,6 +115,11 @@ export const addUser = async (
 
     const user = await UserAPI.search({ login: action.user });
   
+    if (apiHasError(user)) {
+      dispatch({ isLoading: false, loginFormError: user.reason });
+      return;
+    }
+
     const response = await ChatsAPI.addUser({ users: [user[0].id], chatId: action.chatId });
   
     if (apiHasError(response)) {

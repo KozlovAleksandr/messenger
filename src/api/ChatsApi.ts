@@ -26,7 +26,6 @@ export class ChatsAPI {
   }
 
   createChat(data: CreateChatRequestData) {
-    console.log("data", data);
     return this.apiInstance.post("chats", { data });
   }
 
