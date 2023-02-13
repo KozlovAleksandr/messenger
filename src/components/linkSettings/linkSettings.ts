@@ -1,7 +1,4 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./linkSettings.scss";
 
 interface LinkSettingsProps {
   title: string;
@@ -17,6 +14,10 @@ export class LinkSettings extends Block {
   }
 
   protected render(): string {
-    return template;
+    return `
+    <button class="chat__link" type="button">
+      {{{title}}}
+    </button>
+    `;
   }
 }

@@ -1,8 +1,6 @@
 import Block from "../../core/Block";
 import withStore from "../../utils/withStore";
 
-import "./messagesBox.scss";
-
 interface MessagesBoxProps {
   name: string;
   users: string;

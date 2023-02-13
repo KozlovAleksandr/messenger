@@ -49,8 +49,8 @@
         height: 92px;
         border-bottom: 1px solid #BE9063;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
 
         &__title {
             color: #BE9063;

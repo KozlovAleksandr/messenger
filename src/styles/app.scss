@@ -1,4 +1,26 @@
-@import './variables.scss';
+@import "./variables.scss";
+@import "../pages/chat/chat.scss";
+@import "../pages/error4/error.scss";
+@import "../pages/error5/error.scss";
+@import "../pages/settingsPage/form.scss";
+@import "../pages/settingsPage/settingsPage.scss";
+@import "../pages/signIn/form.scss";
+@import "../pages/signUp/form.scss";
+@import "../pages/splash/splash.scss";
+
+@import "../components/button/button.scss";
+@import "../components/buttonChatList/buttonChatList.scss";
+@import "../components/buttonHeaderChat/buttonHeaderChat.scss";
+@import "../components/chatListConversation/chatListConversation.scss";
+@import "../components/footer/footer.scss";
+@import "../components/header/header.scss";
+@import "../components/input/input.scss";
+@import "../components/inputBox/inputBox.scss";
+@import "../components/inputError/inputError.scss";
+@import "../components/layout/layout.scss";
+@import "../components/link/link.scss";
+@import "../components/linkSettings/linkSettings.scss";
+@import "../components/messagesBox/messagesBox.scss";
 
 *,
 *::before,

@@ -1,5 +1,7 @@
 export { Button } from "./button/button";
 export { ButtonChatList } from "./buttonChatList/buttonChatList";
+export { ButtonHeaderChat } from "./buttonHeaderChat/buttonHeaderChat";
+
 
 export { Link } from "./link/link";
 export { LinkSettings } from "./linkSettings/linkSettings";

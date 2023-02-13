@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 function withChats(WrappedBlock) {
   return class extends WrappedBlock {
     public static componentName = WrappedBlock.componentName || WrappedBlock.cName;

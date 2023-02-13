@@ -1,17 +1,19 @@
-import {Block, CoreRouter, Store} from "core";
+import {Block, CoreRouter, Store} from "../../core";
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 import withChats from "../../utils/withChats";
 import { logout } from "../../services/auth";
 import { createChat, chooseChat } from "../../services/chats";
+import { addUser, deleteChat, deleteUser } from "../../services/chats";
 import Messages from "../../services/messages";
-
-import "./chat.scss";
 
 type ChatPageProps = {
   router: CoreRouter;
   store: Store<AppState>;
   onNavigate?: () => void;
+  onAddUser?:() => void;
+  onDeleteChat?:() => void;
+  onDeleteUser?:() => void;
   onLogout?:() => void;
   onCreateChat?: () => void;
   onChooseChat?:() => void;
@@ -29,7 +31,10 @@ class Chats extends Block {
       onNavigate: () => this.onNavigate(),
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onLogout: (event: Event) => this.onLogout(),
+      onAddUser: () => this.onAddUser(),
+      onDeleteUser: () => this.onDeleteUser(),
       onCreateChat: () => this.onCreateChat(),
+      onDeleteChat: () => this.onDeleteChat(),
       onChooseChat: (event: Event) => this.onChooseChat(event),
       sendMessage: (event: SubmitEvent) => this.sendMessage(event),
     });
@@ -46,10 +51,28 @@ class Chats extends Block {
     }
   }
 
+  onDeleteChat() {
+    const chatId = window.store.getState().chatId;
+    window.store.dispatch(deleteChat, chatId);
+  }
+
   onChooseChat(event: Event) {
     console.log(event.currentTarget!.id);
     const chatId = event.currentTarget!.id;
     this.props.store.dispatch(chooseChat, chatId); 
+  }
+
+  onAddUser() {
+    const chatId = window.store.getState().chatId;
+    const login = prompt("Enter user name");
+    console.log(login, chatId);
+    if (login) window.store.dispatch(addUser, { user: login, chatId });
+  }
+
+  onDeleteUser() {
+    const chatId = window.store.getState().chatId;
+    const login = prompt("Enter user name");
+    if (login) window.store.dispatch(deleteUser, { user: login, chatId });
   }
 
   sendMessage(event: SubmitEvent): void {
@@ -96,7 +119,7 @@ class Chats extends Block {
               </div> 
               {{{ ButtonChatList 
                 title="create chat"
-              onClick=onCreateChat
+                onClick=onCreateChat
               }}}
               {{{ButtonChatList 
                 title="LOGOUT" 
@@ -104,13 +127,28 @@ class Chats extends Block {
               }}}
           </div>
           <div class="chat-right">
-            {{#if ${window.store.getState().chatId !== null} }}
               <div class="chat-right__header">
-                <div class="chat-right__header__title">${window.store.getState().chatTitle != undefined ? window.store.getState().chatTitle : ""}</div>
+                {{#if ${window.store.getState().chatId !== null} }}
+                  <div class="chat-right__header__title">${window.store.getState().chatTitle != undefined ? window.store.getState().chatTitle : ""}</div>
+                  <div class="btns_group">
+                    {{{ButtonHeaderChat 
+                      title="ADD USER" 
+                      onClick=onAddUser
+                    }}}
+                    {{{ButtonHeaderChat 
+                      title="DELETE USER" 
+                      onClick=onDeleteUser
+                    }}}
+                    {{{ButtonHeaderChat 
+                      title="DELETE CHAT" 
+                      onClick=onDeleteChat
+                    }}}
+                  </div>
+                {{/if}}
               </div>              
               {{{MessagesBox}}}
               {{{InputBox onSubmit=sendMessage}}}
-            {{/if}}
+            
           </div>
       </div>
     </div>

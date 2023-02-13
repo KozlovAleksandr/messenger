@@ -1,5 +1,4 @@
-import { Block } from "core";
-import "./splash.scss";
+import { Block } from "../../core";
 
 export class SplashPage extends Block {
   static componentName = "SplashPage";

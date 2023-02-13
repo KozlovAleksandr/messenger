@@ -1,7 +1,4 @@
 import Block from "../../core/Block";
-import template from "bundle-text:./template.hbs";
-
-import "./link.scss";
 
 interface LinkProps {
   title: string;
@@ -17,6 +14,8 @@ export class Link extends Block {
   }
 
   protected render(): string {
-    return template;
+    return `
+    <button class="form-btn__link" type="button">{{ title }}</button>
+    `;
   }
 }

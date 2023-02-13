@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import EventBus from "./EventBus";
 
 export type Dispatch<State> = (

@@ -19,6 +19,7 @@ export default class Block<P = any> {
   } as const;
   
   public id = nanoid(6);
+  // id = "qwerty"
 
   protected _element: Nullable<HTMLElement> = null;
   protected readonly props: P;

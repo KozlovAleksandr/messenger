@@ -6,16 +6,24 @@
 
 ## Команда для сборки и запуска
 🚀 
-- `npm run dev` - режим разработчика
+- `npm run dev` - сборка в режиме development (webpack)
+- `npm run build` - сборка в режиме production (webpack)
+- `npm run serv` - запуск проекта на порту 4050 без сборки 
 - `npm run start` - запуск проекта на порту 3000
+
 
 ## Ссылка на макет в Figma
 🖍️ 
 <a style="font-size: 17px" href="https://www.figma.com/file/dxrgJjJwtT4jrylJRxOn1G/chat?node-id=0%3A1&t=rgZMB9TfVY0SI8FZ-0">МАКЕТ</a>
 
+## Ссылка на сайт в render.com
+🖥️ 
+<a href="https://messenger-t46r.onrender.com">САЙТ</a>
+
 ## Ссылка на сайт в netlify
 🖥️ 
 <a href="https://unique-chimera-1ec80b.netlify.app">САЙТ</a>
+
 
 <div>
 <h3 align="left">Используемые технологии:</h3>
@@ -32,20 +40,37 @@
     <a href="https://handlebarsjs.com" target="_blank" rel="noreferrer"> 
         <img src="https://handlebarsjs.com/images/handlebars_logo.png" alt="handlebars" height="40"/> 
     </a> 
-    <a href="https://parceljs.org/" target="_blank" rel="noreferrer"> 
-        <img src="https://parceljs.org/avatar.b1be591d.avif" alt="parcel" height="40"/> 
-    </a>
+    <hr/>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" height="40"/> 
     </a> 
     <a href="https://nodejs.org" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" height="40"/> 
-    </a> 
+    </a>
     <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" height="40"/> 
     </a>
+    <a href="https://jestjs.io/ru/" target="_blank" rel="noreferrer"> 
+        <img src="https://www.jetbrains.com/pycharm/guide/static/5fffc5841d0abba2e6684f13fe6d003f/jest.svg" alt="jest" height="40"/> 
+    </a>
+    <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> 
+        <img src="https://webpack.js.org/icon-square-small-slack.9281492bb267314634b4.png" alt="webpack" height="40"/> 
+    </a>
+    <hr/>
+    <a href="https://stylelint.io" target="_blank" rel="noreferrer"> 
+        <img src="https://static-00.iconduck.com/assets.00/file-type-stylelint-icon-512x488-69sts49e.png" alt="stylelint" height="40"/>  
+    </a>
     <a href="https://eslint.org" target="_blank" rel="noreferrer"> 
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/1200px-ESLint_logo.svg.png" alt="eslint" height="40"/> 
+    </a>
+    <a href="https://www.docker.com" target="_blank" rel="noreferrer"> 
+        <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="docker" height="40"/> 
+    </a>    
+    <a href="https://dashboard.render.com" target="_blank" rel="noreferrer"> 
+        <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/j8z02ssteea4zj1k1nyz" alt="render" height="40"/> 
+    </a>
+    <a href="https://www.netlify.com" target="_blank" rel="noreferrer"> 
+        <img src="https://www.netlify.com/v3/img/components/logomark.png" alt="netlify" height="40"/> 
     </a>
 </p>
 </div>

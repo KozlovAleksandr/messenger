@@ -1,13 +1,10 @@
-import {Block, CoreRouter, Store} from "core";
+import {Block, CoreRouter, Store} from "../../core";
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 import withUser from "../../utils/withUser";
 
-import { validateForm, VatidateRuleType } from "helpers/validateForms";
+import { validateForm, VatidateRuleType } from "../../helpers/validateForms";
 import { changeAvatar, changeData } from "../../services/user";
-
-import "./form.scss";
-import "./settingsPage.scss";
 
 interface SettingsPageProps {
   router: CoreRouter;
@@ -118,7 +115,6 @@ class SettingsPage extends Block {
   }
 
   render(): string {
-    // return template;
     return `
     <div class="container">
       <div class="form-box settings form">

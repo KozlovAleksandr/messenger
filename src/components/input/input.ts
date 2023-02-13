@@ -1,7 +1,5 @@
 import Block from "../../core/Block";
 
-import "./input.scss";
-
 interface InputProps {
   type?: "text" | "password" | "email";
   name: string;
@@ -19,7 +17,6 @@ export class Input extends Block {
   }
 
   protected render(): string {
-    // return template;
     return `
       <input type="{{type}}" name="{{name}}" value="{{value}}" class="form-input__input">
     `;

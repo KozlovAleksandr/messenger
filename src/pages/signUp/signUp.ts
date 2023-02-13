@@ -1,10 +1,9 @@
-import {Block, CoreRouter, Store} from "core";
+import {Block, CoreRouter, Store} from "../../core";
 import { register } from "../../services/auth";
 
 import withRouter from "../../utils/withRouter";
 import withStore from "../../utils/withStore";
 
-import "./form.scss";
 
 type SignUpPageProps = {
   router: CoreRouter;
@@ -65,7 +64,6 @@ class SignUp extends Block<SignUpPageProps> {
   
 
   render(): string {
-//    return template;
     return `
       <div class="container">
         <div class="form-box">

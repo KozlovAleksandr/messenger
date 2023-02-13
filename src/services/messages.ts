@@ -6,14 +6,18 @@ class Messages {
   private sockets: { [id: string]: WSTransport } = {};
 
   public async connect(chatId: number, token: string, start = "0"): Promise<void> {
-    this.close();
-    const userId = window.store.getState().user?.id;
-    this.socket = new WSTransport(`wss://ya-praktikum.tech/ws/chats/${userId}/${chatId}/${token}`);
-    await this.socket.connect();
-    this.sockets[chatId] = this.socket;
-    this.socket.on(EVENTS.MESSAGE, message => this.storeMessages(message));
-    this.socket.on(EVENTS.CLOSE, () => this.close());
-    this.socket.send({ type: "get old", content: start });
+    try {
+      this.close();
+      const userId = window.store.getState().user?.id;
+      this.socket = new WSTransport(`wss://ya-praktikum.tech/ws/chats/${userId}/${chatId}/${token}`);
+      await this.socket.connect();
+      this.sockets[chatId] = this.socket;
+      this.socket.on(EVENTS.MESSAGE, message => this.storeMessages(message));
+      this.socket.on(EVENTS.CLOSE, () => this.close());
+      this.socket.send({ type: "get old", content: start });
+    } catch(err){
+      console.log("connectError: ", err);
+    }
   }
 
   public sendMessage(content: string): void {

@@ -1,22 +1,22 @@
 import Block from "../../core/Block";
 
-interface ButtonChatListProps {
+interface ButtonHeaderChatProps {
   title: string;
   className?: string
   onSubmit: () => void;
   onClick: () => void;
 }
 
-export class ButtonChatList extends Block {
-  static cName = "ButtonChatList";
+export class ButtonHeaderChat extends Block {
+  static cName = "ButtonHeaderChat";
 
-  constructor({title, className, onClick, onSubmit}: ButtonChatListProps) {
+  constructor({title, className, onClick, onSubmit}: ButtonHeaderChatProps) {
     super({title, className, events: {click: onClick, submit: onSubmit}});
   }
 
   protected render(): string {
     return `
-    <button class="chat-list__btn {{className}}">{{ title }}</button>
+    <button class="header-chat__btn">{{ title }}</button>
     `;
   }
 }

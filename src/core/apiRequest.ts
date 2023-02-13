@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const sleep = (ms = 300) => new Promise((res) => setTimeout(res, ms));
 
 

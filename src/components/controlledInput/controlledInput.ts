@@ -1,8 +1,5 @@
-import Block from "core/Block";
-import { validateForm, VatidateRuleType } from "helpers/validateForms";
-
-
-import "./controlledInput.scss";
+import Block from "../../core/Block";
+import { validateForm, VatidateRuleType } from "../../helpers/validateForms";
 
 interface ControlledInputProps {
   label?: string;
@@ -64,7 +61,6 @@ export class ControlledInput extends Block {
   }
 
   protected render(): string {
-    // return template;
     return `
       <div class="form-input__group">
         <label for="" class="form-input__label">{{label}}</label>

@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.header-chat__btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: $lightColor;
+    color: $secondDarkThemeColor;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+}
